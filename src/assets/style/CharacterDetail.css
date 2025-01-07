@@ -1,0 +1,196 @@
+/* CharacterDetail.css */
+.character-detail-section {
+  position: relative;
+  background-color: #0a0a0a;
+  overflow: hidden;
+}
+
+.neon-city-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../images/7.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.8) contrast(1.2);
+}
+
+.overlay-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(176, 38, 255, 0.2),
+    rgba(10, 10, 10, 0.9)
+  );
+  mix-blend-mode: overlay;
+}
+
+.character-info-box {
+  position: relative;
+  padding: 30px;
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid rgba(176, 38, 255, 0.3);
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.character-name {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 30px;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 10px rgba(176, 38, 255, 0.5);
+}
+
+.character-stats {
+  margin-bottom: 30px;
+}
+
+.stat-item {
+  margin-bottom: 15px;
+}
+
+.stat-label {
+  color: #b026ff;
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+
+.stat-value {
+  color: white;
+  font-size: 0.9rem;
+}
+
+.character-description {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.skill-bars .skill-item {
+  margin-bottom: 20px;
+}
+
+.skill-item label {
+  color: white;
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+}
+
+.progress {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #b026ff, #ff26e4);
+  transition: width 1s ease;
+}
+
+.character-visual {
+  position: relative;
+  height: 100%;
+  min-height: 400px;
+}
+
+.glitch-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/path-to-character-image.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(50%);
+}
+
+.data-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(176, 38, 255, 0.1) 0px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: scan 8s linear infinite;
+}
+
+/* Animations */
+@keyframes scan {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes button-glitch {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .character-visual {
+    margin-top: 40px;
+    min-height: 300px;
+  }
+  
+  .feature-title {
+    font-size: 2.5rem;
+  }
+  
+  .city-name {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .character-name {
+    font-size: 2rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .cta-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .feature-title {
+    font-size: 2rem;
+  }
+  
+  .city-name {
+    font-size: 2.5rem;
+  }
+  
+  .character-visual {
+    min-height: 250px;
+  }
+}

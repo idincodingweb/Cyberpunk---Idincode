@@ -1,0 +1,69 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-center {
+  padding:4rem 0;
+  padding-bottom: 0;
+}
+
+.cyberpunk-gradient {
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.card-cyberpunk {
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(255, 0, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.card-cyberpunk:hover {
+    border-color: rgba(255, 0, 255, 0.5);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+}
+
+.neon-line {
+    height: 3px;
+    background: linear-gradient(90deg, #ff00ff, #00ffff);
+    width: 100px;
+    margin: 20px 0;
+}
+
+.btn-cyberpunk {
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-cyberpunk:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    color: white;
+}
+
+.team-member-img {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(255, 0, 255, 0.3);
+}
+
+.team-member-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.team-member-img:hover .team-member-photo {
+    transform: scale(1.1);
+}

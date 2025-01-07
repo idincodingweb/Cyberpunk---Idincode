@@ -1,0 +1,196 @@
+/* GameFeature.css */
+.game-feature-section {
+  position: relative;
+  background-color: #0a0a0a;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.cyber-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(0deg, transparent 24%, 
+    rgba(176, 38, 255, .05) 25%, 
+    rgba(176, 38, 255, .05) 26%, transparent 27%, transparent 74%, 
+    rgba(176, 38, 255, .05) 75%, 
+    rgba(176, 38, 255, .05) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, 
+    rgba(176, 38, 255, .05) 25%, 
+    rgba(176, 38, 255, .05) 26%, transparent 27%, transparent 74%, 
+    rgba(176, 38, 255, .05) 75%, 
+    rgba(176, 38, 255, .05) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+}
+
+.feature-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.feature-title {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 30px;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+}
+
+.city-name {
+  display: block;
+  color: #b026ff;
+  font-size: 4rem;
+  text-shadow: 0 0 20px rgba(176, 38, 255, 0.5);
+}
+
+.feature-description {
+  color: #ccc;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.cta-button {
+  position: relative;
+  padding: 15px 40px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.cta-button.primary {
+  background: #b026ff;
+  border: 1px solid #b026ff;
+}
+
+.cta-button.secondary {
+  border: 1px solid #b026ff;
+}
+
+.button-glitch {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: button-glitch 3s infinite;
+}
+
+.floating-elements .cyber-element {
+  position: absolute;
+  background: rgba(176, 38, 255, 0.1);
+  border: 1px solid rgba(176, 38, 255, 0.3);
+}
+
+.element-1 {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  left: 10%;
+  transform: rotate(45deg);
+}
+
+.element-2 {
+  width: 150px;
+  height: 150px;
+  bottom: 30%;
+  right: 15%;
+  transform: rotate(-30deg);
+}
+
+.element-3 {
+  width: 80px;
+  height: 80px;
+  top: 40%;
+  right: 25%;
+  transform: rotate(15deg);
+}
+
+/* Animations */
+@keyframes scan {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes button-glitch {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .character-visual {
+    margin-top: 40px;
+    min-height: 300px;
+  }
+  
+  .feature-title {
+    font-size: 2.5rem;
+  }
+  
+  .city-name {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .character-name {
+    font-size: 2rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .cta-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .feature-title {
+    font-size: 2rem;
+  }
+  
+  .city-name {
+    font-size: 2.5rem;
+  }
+  
+  .character-visual {
+    min-height: 250px;
+  }
+}

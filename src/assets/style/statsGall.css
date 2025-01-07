@@ -1,0 +1,275 @@
+/* StatsSection.css */
+.stats-section {
+  background-color: #0a0a0a;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    rgba(176, 38, 255, 0.05) 1px, 
+    transparent 1px),
+    linear-gradient(0deg, 
+    rgba(176, 38, 255, 0.05) 1px, 
+    transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 20px;
+}
+
+.stat-circle-container {
+  position: relative;
+}
+
+.stat-circle {
+  width: 100%;
+  padding-bottom: 100%;
+  position: relative;
+}
+
+.stat-circle svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.stat-circle-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 4;
+}
+
+.stat-circle-progress {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  transition: stroke-dasharray 1s ease;
+}
+
+.stat-value {
+  fill: white;
+  font-size: 20px;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  transform: rotate(90deg);
+}
+
+.stat-name {
+  fill: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  text-anchor: middle;
+  transform: rotate(90deg);
+}
+
+.character-details {
+  padding: 30px;
+  background: rgba(176, 38, 255, 0.1);
+  border: 1px solid rgba(176, 38, 255, 0.3);
+  border-radius: 5px;
+}
+
+.details-title {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-family: 'Courier New', monospace;
+}
+
+.details-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid rgba(176, 38, 255, 0.2);
+}
+
+.detail-label {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.detail-value {
+  color: white;
+  font-weight: bold;
+}
+
+.detail-value.active {
+  color: #26ffb0;
+}
+
+/* MediaGallery.css */
+.media-gallery-section {
+  background-color: #0a0a0a;
+  padding: 1rem;
+  position: relative;
+}
+
+.section-header {
+  margin-bottom: 50px;
+}
+
+.glitch-title {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-family: 'Courier New', monospace;
+  position: relative;
+}
+
+.title-line {
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #b026ff, transparent);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  padding-bottom: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(176, 38, 255, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-item:hover .item-overlay {
+  opacity: 1;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.play-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(176, 38, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-icon {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 20px;
+  border-color: transparent transparent transparent white;
+  margin-left: 5px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+}
+
+.modal-content img,
+.modal-content video {
+  max-width: 100%;
+  max-height: 90vh;
+}
+
+.close-button {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .character-details {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .glitch-title {
+    font-size: 2rem;
+  }
+}
